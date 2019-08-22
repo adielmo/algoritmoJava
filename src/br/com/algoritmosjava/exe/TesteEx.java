@@ -34,13 +34,13 @@ public class TesteEx {
 				pesquisarUltimoIndice(scanner, lista);
 				break;
 			case 6:
-
+				pesquisarContatoExiste(scanner, lista);
 				break;
 			case 7:
-
+				excluirPorPosicao(scanner, lista);
 				break;
 			case 8:
-
+				excluirPorPosicao(scanner, lista);
 				break;
 			case 9:
 
@@ -52,6 +52,53 @@ public class TesteEx {
 		}
 		System.out.println("Usuário digitou 0 programa saiu!");
 	}
+
+	private static void excluirContato(Scanner scanner, Lista<Contato> lista) {
+		int pos = lerInformacaoInt("Entre com a posição a ser removida", scanner);
+
+		try {
+			Contato contato = lista.busca(pos);
+			lista.remove(contato);
+
+			System.out.println("Contato excluindo");
+
+		} catch (Exception e) {
+			System.out.println("Entrada inválida, digite novamente");
+		}
+	}
+
+	private static void excluirPorPosicao(Scanner scanner, Lista<Contato> lista) {
+		int pos = lerInformacaoInt("Entre com a posição a ser removida", scanner);
+
+		try {
+			lista.remover(pos);
+
+			System.out.println("Contato excluindo");
+
+		} catch (Exception e) {
+			System.out.println("Entrada inválida, digite novamente");
+		}
+	}
+
+	private static void pesquisarContatoExiste(Scanner scanner, Lista<Contato> lista) {
+		int pos = lerInformacaoInt("Entre com o contato pesquisada", scanner);
+
+		try {
+			Contato contato = lista.busca(pos);
+			boolean existe = lista.contem(contato);
+
+			if (existe) {
+				System.out.println("Contato existe, seguem dados:");
+				System.out.println(contato);
+			} else {
+				System.out.println("Contato não existe!");
+			}
+
+		} catch (Exception e) {
+			System.out.println("Entrada inválida, digite novamente");
+		}
+	}
+
 	private static void pesquisarUltimoIndice(Scanner scanner, Lista<Contato> lista) {
 		int pos = lerInformacaoInt("Entre com o contato pesquisada", scanner);
 
@@ -72,7 +119,7 @@ public class TesteEx {
 	private static void obtemContato(Scanner scanner, Lista<Contato> lista) {
 		int pos = lerInformacaoInt("Entre com o contato pesquisada", scanner);
 		try {
-			Contato contato = lista.busca(pos);			
+			Contato contato = lista.busca(pos);
 			System.out.println(contato);
 
 			System.out.println("Fazendo pesquisa de contato encontrado:");
