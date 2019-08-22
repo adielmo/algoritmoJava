@@ -40,10 +40,17 @@ public class TesteEx {
 				excluirPorPosicao(scanner, lista);
 				break;
 			case 8:
-				excluirPorPosicao(scanner, lista);
+				excluirContato(scanner, lista);
 				break;
 			case 9:
+				imprimirTamanhoVetor(lista);
+				break;
 
+			case 10:
+				limparVetor(lista);
+				break;
+			case 11:
+              imprimir(lista);
 				break;
 			default:
 				break;
@@ -51,6 +58,18 @@ public class TesteEx {
 
 		}
 		System.out.println("Usuário digitou 0 programa saiu!");
+	}
+	private static void imprimir(Lista<Contato> lista) {
+		System.out.println(lista);
+	}
+
+	private static void limparVetor(Lista<Contato> lista) {
+		lista.limpar();
+		System.out.println(lista);
+	}
+
+	private static void imprimirTamanhoVetor(Lista<Contato> lista) {
+		System.out.println("Tamanho do vetor é : " + lista.tamanho());
 	}
 
 	private static void excluirContato(Scanner scanner, Lista<Contato> lista) {
