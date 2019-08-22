@@ -71,7 +71,10 @@ public class Lista<T>{
 			this.tamanho --;
 		
 	}
-	public Object busca(int posicao) {
+	public T obetem(int posicao) {
+		return this.busca(posicao);
+	}
+	public T busca(int posicao) {
 	this.validarPosicao(posicao);
 		
 		return this.elementos[posicao];
@@ -87,13 +90,42 @@ public class Lista<T>{
 		}
 		return -1;
 	}
+	public int ultimoIndice(T elemento){
+		
+		for(int i=this.tamanho-1; i >= 0; i--) {
+			if (this.elementos[i].equals(elemento)) {
+				return i;
+			}
+			
+		}
+		return -1;
+	}
+	
+	public void remove(T elemento) {
+		int pos = this.busca(elemento);
+            if (pos > -1) {
+				this.remover(pos);
+			}
+	}
+	
+	public boolean contem(T elemento) {
+		return busca(elemento) > -1;
+	}
 
 		 
 	public void quantidade() {
 		System.out.println("Quantidade de posição ocupada " + this.tamanho);
 	}
-	public void tamanhoArray() {
-		System.out.println("Array tem: " + elementos.length + " posições");
+	public void limpar() {
+		//this.tamanho =0;
+		for(int i=0; i < this.tamanho; i++) {
+			this.elementos[i] = null;
+		}
+		this.tamanho=0;
+	}
+	
+	public int tamanho() {
+		return this.tamanho;
 	}
 	
 	@Override
