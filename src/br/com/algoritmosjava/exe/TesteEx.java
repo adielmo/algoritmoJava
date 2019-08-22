@@ -28,12 +28,21 @@ public class TesteEx {
 				obtemContatoPosicao(scanner, lista);
 				break;
 			case 4:
-           obtemContato(scanner, lista);
+				obtemContato(scanner, lista);
 				break;
 			case 5:
-
+				pesquisarUltimoIndice(scanner, lista);
 				break;
 			case 6:
+
+				break;
+			case 7:
+
+				break;
+			case 8:
+
+				break;
+			case 9:
 
 				break;
 			default:
@@ -43,13 +52,29 @@ public class TesteEx {
 		}
 		System.out.println("Usuário digitou 0 programa saiu!");
 	}
-	
+	private static void pesquisarUltimoIndice(Scanner scanner, Lista<Contato> lista) {
+		int pos = lerInformacaoInt("Entre com o contato pesquisada", scanner);
+
+		try {
+			Contato contato = lista.busca(pos);
+			System.out.println("Contato existe, seguem dados:");
+			System.out.println(contato);
+
+			System.out.println("Fazendo pesquisa de contato encontrado:");
+			pos = lista.ultimoIndice(contato);
+			System.out.println("Contato encotrado na posição " + pos);
+
+		} catch (Exception e) {
+			System.out.println("Entrada inválida, digite novamente");
+		}
+	}
+
 	private static void obtemContato(Scanner scanner, Lista<Contato> lista) {
 		int pos = lerInformacaoInt("Entre com o contato pesquisada", scanner);
 		try {
 			Contato contato = lista.busca(pos);			
 			System.out.println(contato);
-			
+
 			System.out.println("Fazendo pesquisa de contato encontrado:");
 			pos = lista.busca(contato);
 			System.out.println("Contato encotrado na posição " + pos);
