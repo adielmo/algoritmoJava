@@ -11,7 +11,7 @@ public class TesteEx {
 		Scanner scanner = new Scanner(System.in);
 
 		Lista<Contato> lista = new Lista<>(5);
-		// criarContatoDinamicamente(6, lista);
+		 criarContatoDinamicamente(6, lista);
 
 		int opcao = 1;
 		while (opcao != 0) {
@@ -82,7 +82,7 @@ public class TesteEx {
 			System.out.println("Contato excluindo");
 
 		} catch (Exception e) {
-			System.out.println("Entrada inválida, digite novamente");
+			System.out.println("Entrada inválida, digite novamente:\n");
 		}
 	}
 
@@ -90,17 +90,17 @@ public class TesteEx {
 		int pos = lerInformacaoInt("Entre com a posição a ser removida", scanner);
 
 		try {
-			lista.remover(pos);
+			lista.remove(pos);
 
 			System.out.println("Contato excluindo");
 
 		} catch (Exception e) {
-			System.out.println("Entrada inválida, digite novamente");
+			System.out.println("Entrada inválida, digite novamente:\n");
 		}
 	}
 
 	private static void pesquisarContatoExiste(Scanner scanner, Lista<Contato> lista) {
-		int pos = lerInformacaoInt("Entre com o contato pesquisada", scanner);
+		int pos = lerInformacaoInt("Entre com a posição a ser pesquisado:", scanner);
 
 		try {
 			Contato contato = lista.busca(pos);
@@ -114,12 +114,12 @@ public class TesteEx {
 			}
 
 		} catch (Exception e) {
-			System.out.println("Entrada inválida, digite novamente");
+			System.out.println("Entrada inválida, digite novamente:\n");
 		}
 	}
 
 	private static void pesquisarUltimoIndice(Scanner scanner, Lista<Contato> lista) {
-		int pos = lerInformacaoInt("Entre com o contato pesquisada", scanner);
+		int pos = lerInformacaoInt("Entre com o contato pesquisado:", scanner);
 
 		try {
 			Contato contato = lista.busca(pos);
@@ -131,12 +131,12 @@ public class TesteEx {
 			System.out.println("Contato encotrado na posição " + pos);
 
 		} catch (Exception e) {
-			System.out.println("Entrada inválida, digite novamente");
+			System.out.println("Entrada inválida, digite novamente:\n");
 		}
 	}
 
 	private static void obtemContato(Scanner scanner, Lista<Contato> lista) {
-		int pos = lerInformacaoInt("Entre com o contato pesquisada", scanner);
+		int pos = lerInformacaoInt("Entre com o contato pesquisado:", scanner);
 		try {
 			Contato contato = lista.busca(pos);
 			System.out.println(contato);
@@ -146,7 +146,7 @@ public class TesteEx {
 			System.out.println("Contato encotrado na posição " + pos);
 
 		} catch (Exception e) {
-			System.out.println("Entrada inválida, digite novamente");
+			System.out.println("Entrada inválida, digite novamente:\n");
 		}
 	}
 
@@ -158,7 +158,7 @@ public class TesteEx {
 			System.out.println(contato);
 
 		} catch (Exception e) {
-			System.out.println("Entrada inválida, digite novamente");
+			System.out.println("Entrada inválida, digite novamente:\n");
 		}
 	}
 
@@ -173,17 +173,17 @@ public class TesteEx {
 		int pos = lerInformacaoInt("Entre com a posição do contato", scanner);
 
 		try {
-			lista.adiciona(contato);
+			lista.adiciona(pos, contato);
 			System.out.println("Contato adicionado com sucesso");
 			System.out.println(lista);
 
 		} catch (Exception e) {
-			System.out.println("Não adicionado!");
+			System.out.println("Não adicionado!\n");
 		}
 
 	}
 
-	private static int lerInformacaoInt(String msg, Scanner scanner) {
+	protected static int lerInformacaoInt(String msg, Scanner scanner) {
 
 		boolean entradaValida = false;
 		int num = 0;
@@ -197,7 +197,7 @@ public class TesteEx {
 
 				entradaValida = true;
 			} catch (Exception e) {
-				System.out.println("Entrada inválida, digite novamente");
+				System.out.println("Entrada inválida, digite novamente:\n");
 			}
 
 		}
@@ -217,14 +217,14 @@ public class TesteEx {
 		System.out.println(lista);
 	}
 
-	private static String lerInformacao(String msg, Scanner scanner) {
+	protected static String lerInformacao(String msg, Scanner scanner) {
 		System.out.println(msg);
 		String entrada = scanner.nextLine();
 
 		return entrada;
 	}
 
-	private static int obterOpcaoMenu(Scanner scanner) {
+	protected static int obterOpcaoMenu(Scanner scanner) {
 		boolean entradaValida = false;
 		int opcao = 0;
 		String entrada;
@@ -265,7 +265,7 @@ public class TesteEx {
 
 	}
 
-	private static void criarContatoDinamicamente(int quantidade, Lista<Contato> lista) {
+	protected static void criarContatoDinamicamente(int quantidade, Lista<Contato> lista) {
 		Contato contato;
 		for (int i = 1; i <= quantidade; i++) {
 

@@ -61,7 +61,7 @@ public class Lista<T>{
 		}
 	}
 	
-	public void remover(int posicao) {
+	public void remove(int posicao) {
 		
 	validarPosicao(posicao);
 	
@@ -104,7 +104,7 @@ public class Lista<T>{
 	public void remove(T elemento) {
 		int pos = this.busca(elemento);
             if (pos > -1) {
-				this.remover(pos);
+				this.remove(pos);
 			}
 	}
 	
