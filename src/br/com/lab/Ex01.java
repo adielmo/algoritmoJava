@@ -12,22 +12,34 @@ public class Ex01 {
 		Integer num;
 
 		for (int i = 0; i <= 10; i++) {
+
 			System.out.println("Digite o valor:");
 			num = scanner.nextInt();
+
 			if (num % 2 == 0) {
-				pilha.empilha(num);
 				System.out.println("Empilhando o número " + num);
+				pilha.empilha(num);
+
 			} else {
 
-				System.out.println(!pilha.estavazia() ? pilha.desempilhar() : "Pilha está vazia!");
-
+				Integer desempilhado = pilha.desempilhar();
+				if (desempilhado == null) {
+	System.out.println("Pilha está vazia!");
+				} else {
+	System.out.println("Número impar, desempilhando um elemento da pilha: " 
+				+ desempilhado);
+				}
 			}
 		}
+		System.out.println("Desempilhado números da pilha");
 
-		for (int i = 0; i < pilha.tamanho(); i++) {
-			System.out.println(pilha.desempilhar());
+		while (!pilha.estavazia()) {
+
+			System.out.println("Número impar, desempilhando em elemento da pilha: " + pilha.desempilhar());
 
 		}
+
+		System.out.println("Todos elementos foram desempilhados.");
 
 	}
 
