@@ -21,13 +21,12 @@ public class Ex01 {
 				pilha.empilha(num);
 
 			} else {
-
-				Integer desempilhado = pilha.desempilhar();
+				
+		Integer desempilhado = pilha.desempilhar();
 				if (desempilhado == null) {
-	System.out.println("Pilha está vazia!");
+					System.out.println("Pilha está vazia!");
 				} else {
-	System.out.println("Número impar, desempilhando um elemento da pilha: " 
-				+ desempilhado);
+					System.out.println("Número impar, desempilhando um elemento da pilha: " + desempilhado);
 				}
 			}
 		}
