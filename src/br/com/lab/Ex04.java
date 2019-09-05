@@ -2,8 +2,6 @@ package br.com.lab;
 
 import java.util.Stack;
 
-import br.com.pilhas.Pilha;
-
 public class Ex04 {
 	
 	public static void main(String[] args) {
