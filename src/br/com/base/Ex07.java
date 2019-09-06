@@ -5,11 +5,11 @@ import java.util.Stack;
 public class Ex07 {
 	public static void main(String[] args) {
 		
-		imprimir(2);
+		
 		imprimir(4);
 		imprimir(10);
 		imprimir(25);
-		imprimir(10035);
+		
 		
 		
 	}
