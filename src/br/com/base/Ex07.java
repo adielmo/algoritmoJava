@@ -9,8 +9,7 @@ public class Ex07 {
 		imprimir(4);
 		imprimir(10);
 		imprimir(25);
-		imprimir(10035);
-		
+		imprimir(10035);		
 		
 	}
 	
